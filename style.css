@@ -1,0 +1,400 @@
+/* ---------- Global ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef3f9;
+    color: #333;
+}
+
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+    background: linear-gradient(135deg, #0d6efd, #084298);
+    padding: 15px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-size: 22px;
+}
+
+.nav-link {
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: white !important;
+    transform: translateY(-3px);
+}
+
+
+/* ---------- Dashboard Grid ---------- */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 90vh;
+}
+
+
+/* ---------- Sidebar ---------- */
+
+.sidebar {
+    background: #111827;
+    color: white;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar h4 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.sidebar a {
+    color: #d1d5db;
+    text-decoration: none;
+    padding: 13px 15px;
+    border-radius: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+    background: #2563eb;
+    color: white;
+    transform: translateX(8px);
+}
+
+
+/* ---------- Main Content ---------- */
+
+.content {
+    padding: 30px;
+}
+
+
+/* ---------- Welcome Banner ---------- */
+
+.welcome-banner {
+    background: linear-gradient( 135deg, #2563eb, #60a5fa);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.welcome-banner h2 {
+    font-weight: bold;
+}
+
+
+/* ---------- Cards ---------- */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.dashboard-card {
+    border: none;
+    border-radius: 18px;
+    background: white;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.4s;
+    animation: slideUp 0.6s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    font-size: 45px;
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+.dashboard-card h3 {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+/* ---------- Quick Buttons ---------- */
+
+.quick-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.quick-actions .btn {
+    padding: 12px 20px;
+    transition: 0.3s;
+}
+
+.quick-actions .btn:hover {
+    transform: scale(1.05);
+}
+
+
+/* ---------- Table Section ---------- */
+
+.data-section {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table tbody tr {
+    transition: 0.3s;
+}
+
+.table tbody tr:hover {
+    background: #e7f1ff;
+    transform: scale(1.01);
+}
+
+
+/* ---------- Notice and Events ---------- */
+
+.dashboard-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.info-box {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.info-box h4 {
+    color: #155ef1;
+    margin-bottom: 20px;
+}
+
+.info-box li {
+    margin: 12px 0;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    background: #111827;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+/* ---------- Animation ---------- */
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- Responsive Design ---------- */
+
+@media(max-width:768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        flex-direction: row;
+        overflow: auto;
+    }
+    .sidebar h4 {
+        display: none;
+    }
+    .sidebar a {
+        white-space: nowrap;
+    }
+    .welcome-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+
+/* ==========================
+   Students Page Styling
+========================== */
+
+
+/* Search Box Styling */
+
+.data-section input,
+.data-section select {
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    transition: 0.3s;
+}
+
+.data-section input:focus,
+.data-section select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+}
+
+
+/* Student Table Animation */
+
+.data-section table {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.data-section tbody tr {
+    transition: 0.3s;
+}
+
+.data-section tbody tr:hover {
+    background: #eff6ff;
+    transform: scale(1.01);
+}
+
+
+/* Table Buttons */
+
+.table .btn {
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.table .btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* Add Student Button */
+
+.welcome-banner .btn {
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-weight: bold;
+}
+
+.welcome-banner .btn:hover {
+    transform: scale(1.05);
+}
+
+
+/* Student Card Colors */
+
+.dashboard-card:nth-child(1) {
+    border-top: 5px solid #2563eb;
+}
+
+.dashboard-card:nth-child(2) {
+    border-top: 5px solid #16a34a;
+}
+
+.dashboard-card:nth-child(3) {
+    border-top: 5px solid #ec4899;
+}
+
+.dashboard-card:nth-child(4) {
+    border-top: 5px solid #f59e0b;
+}
+
+
+/* Badge Styling */
+
+.badge {
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+
+/* Smooth Page Entry */
+
+.content {
+    animation: pageLoad 0.6s ease;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Mobile Student Page */
+
+@media(max-width:768px) {
+    .section-title {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    .table {
+        font-size: 14px;
+    }
+    .welcome-banner {
+        padding: 20px;
+    }
+}
